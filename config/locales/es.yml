@@ -6,16 +6,16 @@ es:
     about_us: Acerca de nosotros
     bills: Proyectos de ley
     communication: Pregúntales
-    congressmen: Congresistas
+    congressmen: Parlamentarios
     disclosure: Declaraciones
-    from: de Ciudadano Inteligente
+    from: de TEDIC
     glossary: Glosario
     study: Estudios
     home: Portada
     menu: Menú
     search: Búsqueda
     tables: Tablas
-    title_project: Congreso abierto
+    title_project: Parlamento abierto
     welcome: Bienvenido(a)
   main:
     search_placeholder: Ingresa un proyecto de ley o congresista
@@ -34,10 +34,10 @@ es:
     yes: Sí
     no: No
     abstentions: Abstenciones
-    title_slogan: Bienvenido a tu congreso online
+    title_slogan: Bienvenido a tu parlamento online
     title_subslogan: Entra sin pedir permiso
     filter_bills: Proyectos de ley
-    filter_congressmen: Congresistas
+    filter_congressmen: Parlamentarios
     discussion_agendas: Tablas de discusión
     high_chamber: Senado
     low_chamber: Cámara de diputados
@@ -267,7 +267,7 @@ es:
     no_results: 'Oops, ¡no encontramos nada!'
   congressmen:
     home: Portada
-    breadcrumb: Congresistas
+    breadcrumb: Parlamentaios
     fb_share: Comparte
     tw_share: Twittea
     title: Congresistas
@@ -304,16 +304,16 @@ es:
     socialnet: 'Redes sociales:'
     last_question: Última pregunta
   email:
-    subject: 'Congreso abierto, confirmación de suscripción'
-    body_header: 'Bienvenido a Congreso abierto, %s'
+    subject: 'Parlamento abierto, confirmación de suscripción'
+    body_header: 'Bienvenido a Parlamento abierto, %s'
     body_content: 'Para confirmar tu suscripción al Proyecto de ley %s haz click '
-    body_footer: 'Atte el equipo de Congreso abierto'
+    body_footer: 'Atte el equipo de Parlamento abierto'
   routes:
     agendas: agendas
     bills: proyectos
     bills_search: busquedas_de_proyectos
     communications: comunicaciones
-    congressmen: congresistas
+    congressmen: parlamentarios
     disclosures: declaraciones
     glossaries: glosarios
     searches: busquedas

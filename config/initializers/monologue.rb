@@ -1,5 +1,5 @@
 Monologue.config do |config|
-  config.site_name = "Congreso Abierto"
+  config.site_name = "Parlamento Abierto"
   config.site_subtitle = "-"
   config.site_url = "/"
 
@@ -13,7 +13,7 @@ Monologue.config do |config|
 
   # LOCALE
   config.twitter_locale = "es" # "fr"
-  config.facebook_like_locale = "es_CL" # "fr_CA"
+  config.facebook_like_locale = "es_PY" # "fr_CA"
   config.google_plusone_locale = "es"
 
   # config.layout               = "layouts/application"
