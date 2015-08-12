@@ -22,6 +22,7 @@ Legislative::Application.routes.draw do
       get 'searches', on: :collection
     end
 
+    resources :media #videos section
     resources :agendas
     resources :disclosures
     resources :glossaries
@@ -29,7 +30,8 @@ Legislative::Application.routes.draw do
     resources :searches
     resources :sessions
     resources :users
-    resources :user_subscriptions # do
+    resources :user_subscriptions
+    # do
       # delete 'unsubscribe_all', on: :collection
     # end
     root :to => "mains#index"
