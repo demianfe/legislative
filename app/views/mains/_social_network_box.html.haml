@@ -2,7 +2,7 @@
   %ul.social-network.list-inline
     - if !ENV['twitter_account'].blank? and !ENV['twitter_tags'].blank?
       %li
-        - url = '//twitter.com/share?url='+request.original_url+'&via='+ENV['twitter_account']+'&hashtags='+ENV['twitter_tags']+'&text=Bienvenido a tu congreso online, entra sin pedir permiso'
+        - url = '//twitter.com/share?url='+request.original_url+'&via='+ENV['twitter_account']+'&hashtags='+ENV['twitter_tags']+'&text=Bienvenido a tu parlamento en linea'
         %a{'href' => '#', 'onclick'=>'window.open("'+url+'","twitter","width=450, height=250")'}
           %span.fa-stack.fa-lg
             %i.fa.fa-circle.fa-stack-2x

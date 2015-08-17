@@ -26,19 +26,19 @@ production:
   billit_url: 'http://parlamentoabierto.sinergetica.com:8002/bills/'
   paperworks_url: 'http://parlamentoabierto.sinergetica.com:8002/bills/'
   popit_url:  'http://popit.parlamentoabierto.sinergetica.com:8000/'
-  twitter_tags: 'CongresoAbierto'
-  twitter_account:  'ciudadanoi'
+  twitter_tags: 'ParlamentoAbierto'
+  twitter_account:  'tedicpy'
   popit_url:  'parlamento.popit.parlamentoabierto.sinergetica.com:8000/api'
   popit_persons:  'http://parlamento.popit.parlamentoabierto.sinergetica.com:8000/api/persons/'  # example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/persons/'; the same instance used above but with http and person path
-  popit_search:   ~   # example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/search/persons?'; used for person search
+  popit_search:     'http://parlamento.popit.parlamentoabierto.sinergetica.com:8000/v0.1/search/persons?' # example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/search/persons?'; used for person search
   popit_organizations: 'http://parlamento.popit.parlamentoabierto.sinergetica.com:8000/api/organizations/'  #example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/organizations/'
-  popit_organizations_search: ~ #example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/search/organizations?'
-  writeit_base_url: 'http://writeit.parlamentoabierto.sinergetica.com:8001'
-  writeit_base_url: ~
-  writeit_url:      ~
-  writeit_username: ~
-  writeit_api_key:  ~
-  writeit_messages_per_page: '20'
+  popit_organizations_search: 'http://parlamento.popit.parlamentoabierto.sinergetica.com:8000/api/v0.1/search/organizations?'
+  #writeit_base_url: 'http://writeit.parlamentoabierto.sinergetica.com:8001'
+  #writeit_base_url: ~
+  #writeit_url:      ~
+  #writeit_username: ~
+  #writeit_api_key:  ~
+  #writeit_messages_per_page: '20'
   google_site_verification: ''
   component_legislative_agendas:   ~
   component_legislative_hot_bills: ~
@@ -49,10 +49,10 @@ production:
   congressman_pic_y: '15' # add the y crop image
   congressman_pic_w: '160' # add the with of crop image
   congressman_pic_h: '150' # add the heigth of crop image
-  email_suscription: 'Congreso abierto <info@congresoabierto.cl>'
-  subject_suscription: 'Congreso abierto, confirmación de suscripción'
-  subject_update: 'Congreso abierto, actualización de proyectos de ley'
-  url_suscription: 'http://congresoabierto.cl'
+  email_suscription: 'Parlamento abierto <info@parlamentoabierto.org.py>'
+  subject_suscription: 'Parlamento abierto, confirmación de suscripción'
+  subject_update: 'Parlamento abierto, actualización de proyectos de ley'
+  url_suscription: 'http://parlamentoabierto.org.py'
   smtp_setting_address: ~ #cuttlefish.oaf.org.au
   smtp_setting_username: ~ #user name
   smtp_setting_password: ~ #password
@@ -77,8 +77,8 @@ development:
   disqus_developer: '1'   # use '1' for local testing, otherwise use '0'
   high_chamber_name: 'Senado' # for consume the high chamber agendas in morph.io
   low_chamber_name:  'C.Diputados' # for consume the low chamber agendas in morph.io
-  twitter_tags: 'CongresoAbierto'  # twitter tags
-  twitter_account:  'ciudadanoi'   # twitter account
+  twitter_tags: 'ParlamentoAbierto'  # twitter tags
+  twitter_account:  'tedicpy'   # twitter account
   keywords: ~
   agendas_url:      ~   # example: 'https://api.morph.io/owner/agenda_repo/data.json?query='
   district_weeks_url: ~ # example: 'https://api.morph.io/owner/district_weeks_repo/data.json?query='

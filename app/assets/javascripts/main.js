@@ -10,7 +10,7 @@ $(document).ready(function(){
         
         if ( reg.test(bill_id) ) {
 
-          var jqxhr = $.getJSON( "//billit.ciudadanointeligente.org/bills/"+bill_id+".json", function(){}) 
+          var jqxhr = $.getJSON( "//billit.parlamentoabierto.sinergetica.com:8002/bills/"+bill_id+".json", function(){}) 
             .done(function(data) {
               var url_link = '<a href="//congresoabierto.cl/proyectos/'+data.uid+'" target="_blank">'+data.title+'</a>';
               $(li).html(url_link);
