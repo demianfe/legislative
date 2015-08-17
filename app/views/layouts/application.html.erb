@@ -104,7 +104,7 @@
         </button>
         <div id='site-logo'>
           <a href="<%=root_path%>"><%= image_tag "logo-parlamentoabierto.png", alt:t('layout.title_project') %></a>
-          <div id="defci"><%= t('layout.from') %> <span id="beta">BETA</span></div>
+          <div id="defci"><%= t('layout.from') %> <!-- span id="beta">BETA</span --></div>
         </div>
       </div>
       <div class="collapse navbar-collapse">
@@ -116,9 +116,9 @@
             <li><a href="media/">Videos</a></li>
 
           <% if ENV['component_studies_showcase'] %>
-            <li><%= link_to t('layout.study'), monologue_path %><li/>
+            <!-- li><%= link_to t('layout.study'), monologue_path %><li/ -->
           <% end %>
-          <li><%= link_to t('layout.glossary'), glossaries_path %><li/>
+          <!-- li><%= link_to t('layout.glossary'), glossaries_path %><li/ -->
         </ul>
         <% if current_user %>
         <ul class="nav navbar-nav navbar-right">
@@ -171,10 +171,12 @@
   <!-- End footer -->
 
   <!-- UserVoice JavaScript SDK (only needed once on a page) -->
-  <script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/C0TRuLiFSZpjoucl2e8Fg.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
-
+  <!--
+    <script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/C0TRuLiFSZpjoucl2e8Fg.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
+-->
   <!-- A tab to launch the Classic Widget -->
-  <script>
+<!-- 
+ <script>
   UserVoice = window.UserVoice || [];
   UserVoice.push(['showTab', 'classic_widget', {
     mode: 'feedback',
