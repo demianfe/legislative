@@ -2,11 +2,11 @@
   %div.form-group
     = label_tag :q, 'Palabra clave'
     %input.form-control{:name=>'q', :id=>'q', 'value' => params[:q], :placeholder => t('search.placeholder_search_for'), :onfocus => "ga('send','bills_filters','focus_search')"}
-
-  %div.form-group
-    = label_tag :bill_id, t('search.bulletin')
-    = text_field_tag :bill_id, params[:bill_id], :class => 'form-control', :placeholder => t('search.placeholder_bulletin'), :onfocus => "ga('send','bills_filters','focus_bulletin')"
-
+  -#
+    %div.form-group
+      = label_tag :bill_id, t('search.bulletin')
+      = text_field_tag :bill_id, params[:bill_id], :class => 'form-control', :placeholder => t('search.placeholder_bulletin'), :onfocus => "ga('send','bills_filters','focus_bulletin')"
+  
   %div.form-group
     = label_tag :authors, t('search.author')
     - if params[:authors] == nil
@@ -31,28 +31,28 @@
       - if @chambers != nil
         - @chambers.each do |chamber|
           %option{:value => chamber, selected: params[:initial_chamber] == chamber}= chamber
-
-  %div.form-group
-    = label_tag :current_priority, t('search.current_priority')
-    %select{:name => "current_priority[]", :class => "form-control chosen", :multiple => "multiple", :'data-placeholder' => t('search.placeholder_priority'), :onfocus => "ga('send','bills_filters','focus_priority')"}
-      %option{:value => "", selected: params[:current_priority] == ""}
-      - @selectable_priorities = Billit::Bill.class_variable_get(:@@current_priority_valid_values)
-      - if @selectable_priorities != nil
-        - @selectable_priorities.each do |priority|
-          - if !params[:current_priority].blank?
-            - params[:current_priority].split("|").each do |priority_in_param|
-              - if priority_in_param == priority
-                %option{:value => priority, selected: "selected"}= priority
-        - unselected_priorities = Array.new
-        - if params[:current_priority] != nil
-          - unselected_priorities = @selectable_priorities - params[:current_priority].split("|")
+  -#
+    %div.form-group
+      = label_tag :current_priority, t('search.current_priority')
+      %select{:name => "current_priority[]", :class => "form-control chosen", :multiple => "multiple", :'data-placeholder' => t('search.placeholder_priority'), :onfocus => "ga('send','bills_filters','focus_priority')"}
+        %option{:value => "", selected: params[:current_priority] == ""}
+        - @selectable_priorities = Billit::Bill.class_variable_get(:@@current_priority_valid_values)
+        - if @selectable_priorities != nil
+          - @selectable_priorities.each do |priority|
+            - if !params[:current_priority].blank?
+              - params[:current_priority].split("|").each do |priority_in_param|
+                - if priority_in_param == priority
+                  %option{:value => priority, selected: "selected"}= priority
+          - unselected_priorities = Array.new
+          - if params[:current_priority] != nil
+            - unselected_priorities = @selectable_priorities - params[:current_priority].split("|")
+          - else
+            - unselected_priorities = @selectable_priorities
+          - unselected_priorities.each do |unselected_priority|
+            %option{:value => unselected_priority}= unselected_priority
         - else
-          - unselected_priorities = @selectable_priorities
-        - unselected_priorities.each do |unselected_priority|
-          %option{:value => unselected_priority}= unselected_priority
-      - else
-        %option{:value => priority}= priority
-
+          %option{:value => priority}= priority
+  
   - presets = preset_queries
   - if !presets.empty?
     %div.form-group
