@@ -39,4 +39,9 @@ xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
     xml.loc ENV['root_url'] + glossaries_path()
     xml.priority 0.3
   end
+
+xml.url do
+    xml.loc ENV['root_url'] + media_path()
+    xml.priority 0.8
+  end
 end
