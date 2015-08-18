@@ -18,7 +18,7 @@ es:
     title_project: Parlamento abierto
     welcome: Bienvenido(a)
   main:
-    search_placeholder: Ingresa un proyecto de ley o congresista
+    search_placeholder: Ingresa un proyecto de ley o parlamentario
     username: Nombre de usuario
     password: Contraseña
     stay_signed: Mantenerme conectado
@@ -81,7 +81,7 @@ es:
     event_range: rango de eventos
     bills_advanced_search: Ver todos los resultados
     congressmen_advanced_search: Ver todos los resultados
-    congressmen: Congresistas
+    congressmen: Parlamentarios
     represent: 'Lugar que representa:'
     all_results: Ver todos los resultados
     search_results: Resultados de búsqueda
@@ -149,7 +149,7 @@ es:
     subscribe: Suscríbete a este proyecto
     fb_share: Comparte
     tw_share: Twittea
-    tw_text: Revisa el boletín %s en congresoabierto.cl
+    tw_text: Revisa el boletín %s en parlamentoabierto.org.py
     breadcrumb_bill: Proyectos de ley
     download_project: Descargar proyecto de ley
     title: Proyectos de ley
@@ -245,7 +245,7 @@ es:
     email: Correo Electrónico
     description: 'Te estás suscribiendo al Proyecto de ley nro %s.<br> La suscripción te permitirá estar actualizado respecto a los avances en la tramitación de este Proyecto de ley.'
   communication:
-    intro: 'A través de esta sección podrás tener línea directa con los congresistas, recuerda ser respetuoso.'
+    intro: 'A través de esta sección podrás tener línea directa con los parlamentarios, recuerda ser respetuoso.'
     name: Nombre
     email: E-mail
     choose_congressmen: Seleccione un senador o diputado
@@ -270,8 +270,8 @@ es:
     breadcrumb: Parlamentaios
     fb_share: Comparte
     tw_share: Twittea
-    title: Congresistas
-    title_search: Búsqueda de Congresistas
+    title: Parlamentarios
+    title_search: Búsqueda de Parlamentarios
     represent: 'Representa:'
     form_keyword: Palabra clave
     form_chamber: Cámara
@@ -279,7 +279,7 @@ es:
     form_zone: Zona
     form_party: Partido
     placeholder_keyword: 'Nombre, comuna o región'
-    placeholder_name: Seleccione un congresista
+    placeholder_name: Seleccione un parlamentario
     placeholder_zone: Ingrese una comuna o región
     placeholder_party: Seleccione un partido político
     askthem: Pregúntales
@@ -389,5 +389,5 @@ es:
       year: Año
   config:
     bills_url: 'Hemos detectado que tu archivo de configuración no cuenta con una URL válida para <strong>billit_url</strong> para el consumo de Proyectos de Ley'
-    popit_url: 'Hemos detectado que tu archivo de configuración no cuenta con una URL válida para <strong>billit_url</strong>, <strong>popit_url</strong>, <strong>popit_persons</strong>, <strong>popit_search</strong>, <strong>popit_organizations</strong> y/o <strong>popit_organizations_search</strong> para el consumo de Congresistas'
+    popit_url: 'Hemos detectado que tu archivo de configuración no cuenta con una URL válida para <strong>billit_url</strong>, <strong>popit_url</strong>, <strong>popit_persons</strong>, <strong>popit_search</strong>, <strong>popit_organizations</strong> y/o <strong>popit_organizations_search</strong> para el consumo de Parlamentarios'
     search: 'Hemos detectado que tu archivo de configuración no cuenta con una URL válida para <strong>popit_persons</strong>, <strong>popit_organizations</strong>, <strong>billit_url</strong> y/o <strong>popit_search</strong> para poder realizar búsquedas correctamente'
