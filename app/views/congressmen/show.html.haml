@@ -54,7 +54,7 @@
             - date_birth = localize @congressman.birth_date.to_date
             = sprintf( t('congressmen.years'), date_birth, age(@congressman.birth_date.to_date))
 
-        - if ! @congressman.personal_info.blank?
+        - if ! @congressman.birth_date.blank?
           %p
             %span.light
               Profesión:
@@ -96,30 +96,36 @@
         - if ! @congressman.memberships.blank?
           %p
             %span.light
-              = t('congressmen.party')
-            - @organizations.each do | o |
-              = link_to o.name, {:controller => 'congressmen', :action => 'searches', :organizations => o.id} if @congressman.memberships[0].organization_id == o.id
+              - if ! @congressman.party.blank?
+                = t('congressmen.party')
+                = link_to @congressman.party['name'] ,{:controller => 'congressmen', :action => 'searches', :organizations => @congressman.party['id']}
+              -# @organizations.each do | o |
+                /= link_to o.name, {:controller => 'congressmen', :action => 'searches', :organizations => o.id} if @congressman.memberships[0].organization_id == o.id
 
         - if ! @congressman.commissions.blank?
-          %p
+          %b
+            =t('Comisiones')
+          %p 
             - @congressman.commissions.each do | c |
-              - if ! c.permanent.blank?
-                %p
-                  %span.light
-                    = t('congressmen.permanent')
-                  = c.permanent
+              %span.light
+                = c.name
+              -# - if ! c.permanent.blank?
+              -#   %p
+              -#     %span.light
+              -#       = t('congressmen.permanent')
+              -#     = c.permanent
 
-              - if ! c.special.blank?
-                %p
-                  %span.light
-                    = t('congressmen.special')
-                  = c.special
+              -# - if ! c.special.blank?
+              -#   %p
+              -#     %span.light
+              -#       = t('congressmen.special')
+              -#     = c.special
 
-              - if ! c.researcher.blank?
-                %p
-                  %span.light
-                    = t('congressmen.research')
-                  = c.researcher
+              -# - if ! c.researcher.blank?
+              -#   %p
+              -#     %span.light
+              -#       = t('congressmen.research')
+              -#     = c.researcher
 
         - if ! @congressman.links.blank?
           %div
@@ -138,8 +144,26 @@
                   %a{ 'href' => link.url, 'target' => '_blank' }
                     %i{:class=>'fa '+icon}
                     = link.note.capitalize
-
+        
       %div.col-md-9.whitewithaside
+        :javascript
+            function hideShowBio(){
+                var el = document.getElementById("bio");
+                if (el.className == "visible"){
+                    el.className = "hidden";
+                }else if(el.className == "hidden"){
+                    el.className = "visible";
+                }
+            }
+        %div{:style => 'cursor: pointer' ,:onClick => 'hideShowBio()'}
+          %h4
+            Biografia
+           
+  
+        %div{:id => "bio", :class => 'visible'}
+          :textile
+            #{@congressman.biography}
+            
         %h4
           = t('congressmen.last_initiatives')
         - if !@bills.blank?
@@ -152,17 +176,17 @@
 
         = render :partial => "latest_messages"
 
-        %div.votes
-          %h4
-            = t('congressmen.votes')
-          %div.alert.alert-info
-            = sprintf('Próximamente aquí se mostrará la postura de %s en las diferentes votaciones.', @congressman.name)
+        -# %div.votes
+        -#   %h4
+        -#     = t('congressmen.votes')
+        -#   %div.alert.alert-info
+        -#     = sprintf('Próximamente aquí se mostrará la postura de %s en las diferentes votaciones.', @congressman.name)
 
-        %div.intervencions
-          %h4
-            = t('congressmen.last_interventions')
-          %div.alert.alert-info
-            = sprintf('Próximamente aquí se mostraran las intervenciones de %s en las diferentes sesiones.', @congressman.name)
+        -# %div.intervencions
+        -#   %h4
+        -#     = t('congressmen.last_interventions')
+        -#   %div.alert.alert-info
+        -#     = sprintf('Próximamente aquí se mostraran las intervenciones de %s en las diferentes sesiones.', @congressman.name)
   - else
     %p.alert.alert-danger
       = t('config.popit_url').html_safe
