@@ -31,6 +31,7 @@ class CongressmenController < ApplicationController
 
   # GET /congressmen/1
   def show
+    
     @congressmen =  Hash.new
     @organizations = Hash.new
     @message = Hash.new
@@ -38,12 +39,31 @@ class CongressmenController < ApplicationController
     if !ENV['billit_url'].blank? and !ENV['popit_url'].blank? and !ENV['popit_persons'].blank? and !ENV['popit_search'].blank? and !ENV['popit_organizations'].blank? and !ENV['popit_organizations_search'].blank?
       @congressman = PopitPerson.new
       @congressman.get ENV['popit_persons']+params[:id]+'?include_root=false', 'application/json'
-
+      
       if !@congressman.name.blank?
+
         @bills = (Billit::BillPage.get ENV['billit_url']+'search.json?authors='+URI::escape(@congressman.name)+ '&per_page=3', 'application/json').bills
 
         @organizations = get_organizations
-
+        #get organizations
+        #get memberships
+        #iterate over memberships and organizations and if the classification is comission
+        #set it as comission
+        @congressman.commissions = Array.new
+        @congressman.memberships.each do |membership|
+          @organizations.each do |org|
+            if membership.organization_id == org.id
+              if org.classification == 'Party'
+                @congressman.party = {'id' => org.id, 'name' => org.name}
+                break
+              elsif org.classification == 'Comision'
+                #append to commisions list
+                @congressman.commissions.push(org)
+              end
+            end
+          end
+        end
+          
         #setup the title page
         @title = @congressman.name + " - "
 
