@@ -41,6 +41,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    RedCloth (4.2.9)
     actionmailer (4.1.4)
       actionpack (= 4.1.4)
       actionview (= 4.1.4)
@@ -159,6 +160,8 @@ GEM
       rspec (>= 2.99.0, < 4.0)
     haml (4.0.6)
       tilt
+    haml-contrib (1.0.0.1)
+      haml (>= 3.2.0.alpha.13)
     haml-rails (0.5.3)
       actionpack (>= 4.0.1)
       activesupport (>= 4.0.1)
@@ -348,6 +351,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
   actionpack-action_caching (~> 1.1.1)
   actionpack-page_caching (~> 1.0.2)
   bcrypt (~> 3.1.7)
@@ -365,6 +369,7 @@ DEPENDENCIES
   guard-rails
   guard-rspec
   haml (~> 4.0.5)
+  haml-contrib
   haml-rails (~> 0.5.3)
   htmlentities
   httparty
