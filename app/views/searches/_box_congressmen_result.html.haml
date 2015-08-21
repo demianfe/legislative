@@ -2,9 +2,13 @@
   %div.row
     %div.col-md-1
       - if ! congressman.images.blank?
-        - fantasy_name = congressmen_pic(congressman.name, congressman.images[0].url)
-        = image_tag('congressman/'+fantasy_name+'.jpg', class: "img-circle img-responsive hidden-xs")
-        = image_tag('congressman/'+fantasy_name+'.jpg', class: "img-thumbnail img-responsive visible-xs")
+        - if !congressman.images.blank? and !congressman.images[0]['url'].blank?
+          - fantasy_name = congressmen_pic(congressman.name.gsub(",",""), congressman.images[0]]['url'])
+
+        -# - fantasy_name = congressmen_pic(congressman.name, congressman.images[0].url)
+        -# = image_tag('congressman/'+fantasy_name+'.jpg', class: "img-circle imgg-responsive hidden-xs")
+        -# = 
+        image_tag('congressman/'+fantasy_name+'.jpg', class: "img-thumbnail img-responsive visible-xs")
       - else
         = image_tag('default-profile.png', class: "img-circle img-responsive hidden-xs")
         = image_tag('default-profile.png', class: "img-thumbnail img-responsive visible-xs")
@@ -14,10 +18,10 @@
       %p
         = congressman.title
         %br/
-        - if ! congressman.represent[0].region.blank?
-          %span.light
-            = t('search.represent')
-          = congressman.represent[0].region
+        <!-- - if ! congressman.represent[0].region.blank? -->
+        <!--   %span.light -->
+        <!--     = t('search.represent') -->
+        <!--   = congressman.represent[0].region -->
       %p
         = link_to url_for(controller: "communications", action: "index", id: congressman.id) do
           %i.fa.fa-envelope-o
