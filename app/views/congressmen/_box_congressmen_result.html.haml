@@ -2,8 +2,8 @@
   - @congressmen.persons.each do |congressman|
     %div.row.result
       %div.col-md-1
-        - if !congressman.images.blank? and !congressman.images[0].url.blank?
-          - fantasy_name = congressmen_pic(congressman.name.gsub(",",""), congressman.images[0].url)
+        - if !congressman.images.blank? and !congressman.images[0]['url'].blank?
+          - fantasy_name = congressmen_pic(congressman.name.gsub(",",""), congressman.images[0]]['url'])
           = image_tag('congressman/'+fantasy_name+'.jpg', class: "img-circle img-responsive hidden-xs")
           = image_tag('congressman/'+fantasy_name+'.jpg', class: "img-thumbnail img-responsive visible-xs")
         - else
