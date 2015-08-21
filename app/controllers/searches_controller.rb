@@ -57,12 +57,10 @@ class SearchesController < ApplicationController
         end
         @bills_query = Billit::BillPage.get(ENV['billit_url'] + "search.json/?#{URI.encode(@keywords)}per_page=3", 'application/json')
         @congressmen.get ENV['popit_search']+"#{URI.encode(@keywords)}per_page=3", 'application/json'
-        puts "lo que viene de popit..."
         @congressmen.result.each do |congressman|
-          puts congressman
-          puts congressman.image
+          #monkey patch to solve bad design decisions
           congressman.images = Array.new
-          congressman.images[0] = {'url' => congressman.image}
+          congressman.images[0] = congressman.image
         end
         
       else
