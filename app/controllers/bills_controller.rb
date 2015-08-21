@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'htmlentities'
 require 'billit_representers/models/bill'
 require 'billit_representers/models/bill_page'
@@ -64,7 +65,8 @@ class BillsController < ApplicationController
 
         if !@bill.authors.blank?
           @bill.authors.each do |author|
-            @authors[i] = get_author_related_info author
+            @parts = author.partition(':')
+            @authors[i] = {'uid' =>  @parts[0], 'name' => @parts[2] }#get_author_related_info author
             i = i + 1
           end
         end
@@ -88,9 +90,9 @@ class BillsController < ApplicationController
     if !a[1].blank?
       author = a[1].strip + ' ' + a[0].strip
     end
-
     query = sprintf('select * from data where name = "%s" limit 1', I18n.transliterate(author))
     query = URI::escape(query)
+    puts ENV['congressmen_helper_url']
     begin
       response = RestClient.get(ENV['congressmen_helper_url'] + query, :content_type => :json, :accept => :json, :"x-api-key" => ENV['morph_io_api_key'])
       response = JSON.parse(response).first
