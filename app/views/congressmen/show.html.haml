@@ -96,6 +96,13 @@
         - if ! @congressman.memberships.blank?
           %p
             %span.light
+              - if ! @congressman.chamber.blank?
+                = t('congressmen.camara: ')
+                = @congressman.chamber.name
+                -#= link_to @congressman.chamber.name ,{:controller => 'congressmen', :action => 'searches', :organizations => @congressman.chamber.id}
+
+          %p
+            %span.light
               - if ! @congressman.party.blank?
                 = t('congressmen.party')
                 = link_to @congressman.party['name'] ,{:controller => 'congressmen', :action => 'searches', :organizations => @congressman.party['id']}

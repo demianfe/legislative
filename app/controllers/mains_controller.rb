@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'billit_representers/models/bill_page'
 
 class MainsController < ApplicationController
@@ -21,11 +22,13 @@ class MainsController < ApplicationController
     end
 
     @hot_bills = {};
-
+    
     if !ENV['billit_url'].blank?
-      @hot_bills = prioritize Billit::BillPage.get(ENV['billit_url'] + URI::escape("search?current_priority=Discusión inmediata|Suma|Simple&per_page=100"), 'application/json').bills
+      #priorities are all the same for us, just get this year's bills
+      time = Time.new
+      @hot_bills = prioritize Billit::BillPage.get(ENV['billit_url'] + URI::escape("search?creation_date_min="+time.year.to_s+"-01-01"), 'application/json').bills
     end
-
+    
     if (!ENV['writeit_base_url'].blank?)
 	    @answers = LegislativeAnswerCollection.get()
 
