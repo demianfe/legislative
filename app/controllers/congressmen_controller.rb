@@ -202,7 +202,7 @@ class CongressmenController < ApplicationController
         response['result']['memberships'].each do |mem|
           congressmen_tmp.persons.each do |congressman|
             if mem['person_id'] == congressman.id
-              record = congressman
+              record = congressman              
               # record = PopitPerson.new
               # record.id = congressman.uid
               # record.name = congressman.name

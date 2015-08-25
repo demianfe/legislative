@@ -23,17 +23,17 @@ production:
   bill_graph_day_interval:  '7'
   parliaments_initial_date: '1990-03-01'
   #billit_url: 
-  billit_url: 'http://parlamentoabierto.sinergetica.com:8002/bills/'
-  paperworks_url: 'http://parlamentoabierto.sinergetica.com:8002/bills/'
-  popit_url:  'http://popit.parlamentoabierto.sinergetica.com:8000/'
+  billit_url: 'http://parlamentoabierto.org.py:8002/bills/'
+  paperworks_url: 'http://parlamentoabierto.org.py:8002/bills/'
+  popit_url:  'http://popit.parlamentoabierto.org.py:8000/'
   twitter_tags: 'ParlamentoAbierto'
   twitter_account:  'tedicpy'
-  popit_url:  'parlamento.popit.parlamentoabierto.sinergetica.com:8000/api'
-  popit_persons:  'http://parlamento.popit.parlamentoabierto.sinergetica.com:8000/api/persons/'  # example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/persons/'; the same instance used above but with http and person path
-  popit_search:     'http://parlamento.popit.parlamentoabierto.sinergetica.com:8000/v0.1/search/persons?' # example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/search/persons?'; used for person search
-  popit_organizations: 'http://parlamento.popit.parlamentoabierto.sinergetica.com:8000/api/organizations/'  #example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/organizations/'
-  popit_organizations_search: 'http://parlamento.popit.parlamentoabierto.sinergetica.com:8000/api/v0.1/search/organizations?'
-  #writeit_base_url: 'http://writeit.parlamentoabierto.sinergetica.com:8001'
+  popit_url:  'parlamento.popit.parlamentoabierto.org.py:8000/api'
+  popit_persons:  'http://parlamento.popit.parlamentoabierto.org.py:8000/api/persons/'  # example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/persons/'; the same instance used above but with http and person path
+  popit_search:     'http://parlamento.popit.parlamentoabierto.org.py:8000/v0.1/search/persons?' # example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/search/persons?'; used for person search
+  popit_organizations: 'http://parlamento.popit.parlamentoabierto.org.py:8000/api/organizations/'  #example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/organizations/'
+  popit_organizations_search: 'http://parlamento.popit.parlamentoabierto.org.py:8000/api/v0.1/search/organizations?'
+  #writeit_base_url: 'http://writeit.parlamentoabierto.org.py:8001'
   #writeit_base_url: ~
   #writeit_url:      ~
   #writeit_username: ~
@@ -96,7 +96,7 @@ development:
   popit_search:   'http://parlamento.popit.parlamentoabierto.org.py:8000/api/v0.1/search/persons?'   # example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/search/persons?'; used for person search
   popit_organizations: 'http://parlamento.popit.parlamentoabierto.org.py:8000/api/v0.1/organizations/'  #example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/organizations/'
   popit_organizations_search: 'http://parlamento.popit.parlamentoabierto.org.py:8000/api/v0.1/search/organizations?' #example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/search/organizations?'
-  #writeit_base_url: 'http://writeit.parlamentoabierto.sinergetica.com:8001' # example: 'http://localhost:3001'; you will need create a instance, please contact with ciudadanointeligente's lab team in lab@ciudadanointeligente.org. http://writeit.ciudadanointeligente.org/
+  #writeit_base_url: 'http://writeit.parlamentoabierto.org.py:8001' # example: 'http://localhost:3001'; you will need create a instance, please contact with ciudadanointeligente's lab team in lab@ciudadanointeligente.org. http://writeit.ciudadanointeligente.org/
   #writeit_url:      '/api/v1/instance/1/'   # example: '/api/v1/instance/2/'; writeit instance path
   #writeit_username: 'admin' # example: 'admin'; writeit username
   #writeit_api_key:  'a'     # example: 'a'; writeit apikey

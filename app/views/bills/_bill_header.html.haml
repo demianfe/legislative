@@ -16,10 +16,10 @@
             = @bill.title[0..30] + '...'
       %div.col-md-3
         %ul.list-inline.action-btn
-          %li
-            = link_to (new_user_subscription_path(:bill => params[:id])), class: 'btn btn-warning btn-xs' do
-              %i.fa.fa-star-o
-              = t('bill.bill_subscribe')
+          -# %li
+          -#   = link_to (new_user_subscription_path(:bill => params[:id])), class: 'btn btn-warning btn-xs' do
+          -#     %i.fa.fa-star-o
+          -#     = t('bill.bill_subscribe')
           %li
             - url = '//www.facebook.com/sharer/sharer.php?u='+request.original_url
             %a.btn.btn-warning.btn-xs{'href'=>'#', 'onclick'=>'window.open("'+url+'","facebook","width=450, height=250")'}
