@@ -92,7 +92,7 @@ class BillsController < ApplicationController
     end
     query = sprintf('select * from data where name = "%s" limit 1', I18n.transliterate(author))
     query = URI::escape(query)
-    puts ENV['congressmen_helper_url']
+    
     begin
       response = RestClient.get(ENV['congressmen_helper_url'] + query, :content_type => :json, :accept => :json, :"x-api-key" => ENV['morph_io_api_key'])
       response = JSON.parse(response).first
