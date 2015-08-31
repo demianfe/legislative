@@ -45,29 +45,30 @@ class CongressmenController < ApplicationController
       if !@congressman.name.blank?
 
         @bills = (Billit::BillPage.get ENV['billit_url']+'search.json?authors='+URI::escape(@congressman.name)+ '&per_page=3', 'application/json').bills
-
-        @organizations = get_organizations
-        #get organizations
-        #get memberships
-        #iterate over memberships and organizations and if the classification is comission
-        #set it as comission
         @congressman.commissions = Array.new
+        orgs_querystring = ''
         @congressman.memberships.each do |membership|
-          @organizations.each do |org|
-            if membership.organization_id == org.id
-              if org.classification == 'Party'
-                @congressman.party = {'id' => org.id, 'name' => org.name}
-                #remove party from list
-              elsif org.classification == 'Chamber'
-                @congressman.chamber = org
-              elsif org.classification == 'Comision'
-                #append to commisions list
-                @congressman.commissions.push(org)
-              end
-            end
+          if orgs_querystring == ''
+            orgs_querystring += 'q=id:'+membership.organization_id
+          else
+            orgs_querystring += '+and+'+membership.organization_id
           end
         end
-          
+        @organizations = Popit::OrganizationCollection.new
+        @organizations.get ENV['popit_organizations_search']+orgs_querystring, 'application/json'
+        @organizations.result.each do |org|  
+          if org.classification == 'Party'
+            @congressman.party = {'id' => org.id, 'name' => org.name}
+          #remove party from list
+          elsif org.classification == 'Chamber'
+            @congressman.chamber = org
+          else #org.classification == 'Comision'
+            #append to commisions list
+            @congressman.commissions.push(org)
+          end
+        end
+       
+        @congressman.commissions = @congressman.commissions.uniq
         #setup the title page
         @title = @congressman.name + " - "
      
@@ -176,7 +177,6 @@ class CongressmenController < ApplicationController
       #if keywords has congressma then get only that member
       c = PopitPerson.new
       c.get ENV['popit_persons']+keywords['congressman']+'?include_root=false', 'application/json'
-      puts c.id      
       @congressmen.result = [c]
       
     elsif keywords.has_key? 'chambers' or keywords.has_key? 'organizations'

@@ -153,7 +153,7 @@ test:
   popit_persons:  'http://popit.parlamentoabierto.org.py:8000/api/persons/'
   popit_search:   'http://popit.parlamentoabierto.org.py:8000/api/search/persons?'
   popit_organizations: 'http://popit.parlamentoabierto.org.py:8000/api/organizations/'
-  popit_organizations_search: ~
+  popit_organizations_search: 'http://popit.parlamentoabierto.org.py:8000/api/search/organizations?'
   writeit_base_url: 'http://localhost:3001'
   writeit_url:      '/api/v1/instance/1/'
   writeit_username: 'admin'
