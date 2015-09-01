@@ -114,12 +114,14 @@
             =t('Contactos')
           %p 
             - @congressman.contact_details.each do | c |
-              %span.light
-                - if c.type == 'email'
-                  = c.label + ":"
-                  = mail_to c.value, c.value
-                - else
-                  = c.label + ": " + c.value
+              %ul.list-inline
+                %li
+                  - if c.type == 'email'
+                    = c.label + ":"
+                    = mail_to c.value, c.value
+                  - else
+                    = c.label + ": "
+                    = c.value
 
   
         - if ! @congressman.commissions.blank?
@@ -160,12 +162,10 @@
             }
         %div{:style => 'cursor: pointer' ,:onClick => 'hideShowBio()'}
           %h4
-            Biografia
-           
-        %div{:id => "bio", :class => 'visible'}
-          :textile
-            #{@congressman.biography}
-            
+            %a{ 'href' => @congressman.biography, 'target' => '_blank'} Curriculum Vitae 
+        -# %div{:id => "bio", :class => 'visible'}
+        -#   :textile
+          
         %h4
           = t('congressmen.last_initiatives')
         - if !@bills.blank?
