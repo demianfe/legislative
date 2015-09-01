@@ -33,12 +33,12 @@ production:
   popit_search:     'http://parlamento.popit.parlamentoabierto.sinergetica.com:8000/v0.1/search/persons?' # example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/search/persons?'; used for person search
   popit_organizations: 'http://parlamento.popit.parlamentoabierto.sinergetica.com:8000/api/organizations/'  #example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/organizations/'
   popit_organizations_search: 'http://parlamento.popit.parlamentoabierto.sinergetica.com:8000/api/v0.1/search/organizations?'
-  #writeit_base_url: 'http://writeit.parlamentoabierto.sinergetica.com:8001'
-  #writeit_base_url: ~
-  #writeit_url:      ~
-  #writeit_username: ~
-  #writeit_api_key:  ~
-  #writeit_messages_per_page: '20'
+  writeit_base_url: 'http://writeit.parlamentoabierto.sinergetica.com:8001'
+  writeit_base_url: ~
+  writeit_url:      ~
+  writeit_username: 
+  writeit_api_key:  ~
+  writeit_messages_per_page: '20'
   google_site_verification: ''
   component_legislative_agendas:   ~
   component_legislative_hot_bills: ~
@@ -65,7 +65,8 @@ production:
   twitter_creator: ~ #twitter:creator
   twitter_image: ~ #twitter:image
   twitter_domain: ~ #twitter:domain
-
+  bill_files_url: 'http://localhost/bills/'
+  
 development:
   root_url:   ~           # example: 'http://www.congresoabierto.cl'
   domain: ~               # example: 'congresoabierto.cl'; used by the new Google Analytics tracking code
@@ -127,7 +128,8 @@ development:
   #twitter_creator: ~ #twitter:creator
   #twitter_image: ~ #twitter:image
   #twitter_domain: ~ #twitter:domain
-
+  bill_files_url: 'http://localhost/bills/' 
+  
 test:
   root_url:  ~
   analytics: ~
