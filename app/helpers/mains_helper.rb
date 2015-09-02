@@ -19,6 +19,7 @@ module MainsHelper
       image = Magick::ImageList.new
       begin
         Timeout.timeout(5) do
+          #puts "Imagen: " << img
           url_image = open(img)
         end
       rescue Timeout::Error
