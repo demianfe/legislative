@@ -86,6 +86,7 @@
             - if ! @bill.documents.blank?
               %h5
                 = t('bill.modal_documents')
+              /iterar sobre los documentos y presentarlos aqui
               %table.table.table-striped
                 %tr
                   %th
@@ -99,8 +100,8 @@
                         - if ! doc.date.blank?
                           = localize doc.date.to_date
                       %td
-                        %a{'href'=>doc.link}
-                          = doc.step
+                        %a{'href'=> ENV['bill_files_url'] + @bill.uid  + '/documents/' +doc.link }
+                          = doc.link
 
             - if ! @bill.directives.blank?
               %h5

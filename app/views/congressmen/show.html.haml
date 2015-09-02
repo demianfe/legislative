@@ -109,6 +109,21 @@
               -# @organizations.each do | o |
                 /= link_to o.name, {:controller => 'congressmen', :action => 'searches', :organizations => o.id} if @congressman.memberships[0].organization_id == o.id
 
+        - if ! @congressman.contact_details.blank?
+          %b
+            =t('Contactos')
+          %p 
+            - @congressman.contact_details.each do | c |
+              %ul.list-inline
+                %li
+                  - if c.type == 'email'
+                    = c.label + ":"
+                    = mail_to c.value, c.value
+                  - else
+                    = c.label + ": "
+                    = c.value
+
+  
         - if ! @congressman.commissions.blank?
           %b
             =t('Comisiones')
@@ -116,23 +131,6 @@
             - @congressman.commissions.each do | c |
               %span.light
                 = c.name
-              -# - if ! c.permanent.blank?
-              -#   %p
-              -#     %span.light
-              -#       = t('congressmen.permanent')
-              -#     = c.permanent
-
-              -# - if ! c.special.blank?
-              -#   %p
-              -#     %span.light
-              -#       = t('congressmen.special')
-              -#     = c.special
-
-              -# - if ! c.researcher.blank?
-              -#   %p
-              -#     %span.light
-              -#       = t('congressmen.research')
-              -#     = c.researcher
 
         - if ! @congressman.links.blank?
           %div
@@ -164,12 +162,10 @@
             }
         %div{:style => 'cursor: pointer' ,:onClick => 'hideShowBio()'}
           %h4
-            Biografia
-           
-        %div{:id => "bio", :class => 'visible'}
-          :textile
-            #{@congressman.biography}
-            
+            %a{ 'href' => @congressman.biography, 'target' => '_blank'} Curriculum Vitae 
+        -# %div{:id => "bio", :class => 'visible'}
+        -#   :textile
+          
         %h4
           = t('congressmen.last_initiatives')
         - if !@bills.blank?

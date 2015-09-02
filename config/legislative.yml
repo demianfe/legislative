@@ -65,7 +65,8 @@ production:
   twitter_creator: ~ #twitter:creator
   twitter_image: ~ #twitter:image
   twitter_domain: ~ #twitter:domain
-
+  bill_files_url: 'http://localhost/bills/'
+  
 development:
   root_url:   ~           # example: 'http://www.congresoabierto.cl'
   domain: ~               # example: 'congresoabierto.cl'; used by the new Google Analytics tracking code
@@ -127,7 +128,8 @@ development:
   #twitter_creator: ~ #twitter:creator
   #twitter_image: ~ #twitter:image
   #twitter_domain: ~ #twitter:domain
-
+  bill_files_url: 'http://localhost/bills/' 
+  
 test:
   root_url:  ~
   analytics: ~
