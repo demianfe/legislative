@@ -28,17 +28,17 @@ production:
   popit_url:  'http://popit.parlamentoabierto.org.py:8000/'
   twitter_tags: 'ParlamentoAbierto'
   twitter_account:  'tedicpy'
-  popit_url:  'parlamento.popit.parlamentoabierto.sinergetica.com:8000/api'
-  popit_persons:  'http://parlamento.popit.parlamentoabierto.sinergetica.com:8000/api/persons/'  # example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/persons/'; the same instance used above but with http and person path
-  popit_search:     'http://parlamento.popit.parlamentoabierto.sinergetica.com:8000/v0.1/search/persons?' # example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/search/persons?'; used for person search
-  popit_organizations: 'http://parlamento.popit.parlamentoabierto.sinergetica.com:8000/api/organizations/'  #example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/organizations/'
-  popit_organizations_search: 'http://parlamento.popit.parlamentoabierto.sinergetica.com:8000/api/v0.1/search/organizations?'
-  writeit_base_url: 'http://writeit.parlamentoabierto.sinergetica.com:8001'
-  writeit_base_url: ~
-  writeit_url:      ~
-  writeit_username: 
-  writeit_api_key:  ~
-  writeit_messages_per_page: '20'
+  popit_url:  'parlamento.popit.parlamentoabierto.org.py:8000/api'
+  popit_persons:  'http://parlamento.popit.parlamentoabierto.org.py:8000/api/persons/'  # example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/persons/'; the same instance used above but with http and person path
+  popit_search:     'http://parlamento.popit.parlamentoabierto.org.py:8000/v0.1/search/persons?' # example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/search/persons?'; used for person search
+  popit_organizations: 'http://parlamento.popit.parlamentoabierto.org.py:8000/api/organizations/'  #example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/organizations/'
+  popit_organizations_search: 'http://parlamento.popit.parlamentoabierto.org.py:8000/api/v0.1/search/organizations?'
+  #writeit_base_url: 'http://writeit.parlamentoabierto.org.py:8001'
+  #writeit_base_url: ~
+  #writeit_url:      ~
+  #writeit_username: ~
+  #writeit_api_key:  ~
+  #writeit_messages_per_page: '20'
   google_site_verification: ''
   component_legislative_agendas:   ~
   component_legislative_hot_bills: ~
@@ -97,15 +97,15 @@ development:
   popit_search:   'http://parlamento.popit.parlamentoabierto.org.py:8000/api/v0.1/search/persons?'   # example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/search/persons?'; used for person search
   popit_organizations: 'http://parlamento.popit.parlamentoabierto.org.py:8000/api/v0.1/organizations/'  #example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/organizations/'
   popit_organizations_search: 'http://parlamento.popit.parlamentoabierto.org.py:8000/api/v0.1/search/organizations?' #example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/search/organizations?'
-  #writeit_base_url: 'http://writeit.parlamentoabierto.org.py:8001' # example: 'http://localhost:3001'; you will need create a instance, please contact with ciudadanointeligente's lab team in lab@ciudadanointeligente.org. http://writeit.ciudadanointeligente.org/
-  #writeit_url:      '/api/v1/instance/1/'   # example: '/api/v1/instance/2/'; writeit instance path
-  #writeit_username: 'admin' # example: 'admin'; writeit username
-  #writeit_api_key:  'a'     # example: 'a'; writeit apikey
-  #writeit_messages_per_page: '5'
+  writeit_base_url: 'http://writeit.ciudadanointeligente.org' # example: 'http://localhost:3001'; you will need create a instance, please contact with ciudadanointeligente's lab team in lab@ciudadanointeligente.org. http://writeit.ciudadanointeligente.org/
+  writeit_url:      '/api/v1/instance/1879/'   # example: '/api/v1/instance/2/'; writeit instance path
+  writeit_username: 'demianflorentin' # example: 'admin'; writeit username
+  writeit_api_key:  '760578b2503e745169dfb7456318eb5408b0a68e'     # example: 'a'; writeit apikey
+  writeit_messages_per_page: '5'
   google_site_verification: ''
   component_legislative_agendas:   ~ # to enable this component set a not null value, example: 'true' or '1'
   component_legislative_hot_bills: ~ # to enable this component set a not null value, example: 'true' or '1'
-  component_writeit: ~ # to enable this component set a not null value, example: 'true' or '1'
+  component_writeit: '1' # to enable this component set a not null value, example: 'true' or '1'
   component_studies_showcase: ~ # to enable this component set a not null value, example: 'true' or '1'
   default_locale: 'es'
   congressman_pic_x: '15' # add the x crop image
