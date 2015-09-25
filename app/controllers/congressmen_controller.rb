@@ -43,7 +43,9 @@ class CongressmenController < ApplicationController
       @congressman.get ENV['popit_persons']+params[:id]+'?include_root=false', 'application/json'
       
       if !@congressman.name.blank?
-
+#        time = Time.new
+#        @hot_bills = prioritize Billit::BillPage.get(ENV['billit_url'] + URI::escape("search?creation_date_min="+time.year.to_s+"-01-01"), 'application/json').bills
+        puts ENV['billit_url']+'search.json?authors='+URI::escape(@congressman.name)
         @bills = (Billit::BillPage.get ENV['billit_url']+'search.json?authors='+URI::escape(@congressman.name)+ '&per_page=3', 'application/json').bills
         @congressman.commissions = Array.new
         orgs_querystring = ''
