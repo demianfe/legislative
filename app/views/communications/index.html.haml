@@ -102,7 +102,7 @@
               %div.col-md-1
                 - congressman = congressmen_profile(answer.person.name)
                 - if !congressman['image'].blank?
-                  - fantasy_name = congressmen_pic(answer.person.name, congressman['image'])
+                  - fantasy_name = congressmen_pic_by_id(answer.person.id, congressman['image'])#congressmen_pic(answer.person.name, congressman['image'])
                   = image_tag(fantasy_name+'.jpg', class: "img-circle img-responsive hidden-xs")
                   = image_tag(fantasy_name+'.jpg', class: "img-thumbnail img-responsive visible-xs")
                 - else

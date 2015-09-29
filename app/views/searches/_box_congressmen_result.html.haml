@@ -4,7 +4,7 @@
       - if ! congressman.images.blank?
         - if !congressman.images.blank? and !congressman.images[0].blank?
           = puts congressman.images[0]
-          - fantasy_name = congressmen_pic(congressman.name.gsub(",",""), congressman.images[0])
+          - fantasy_name = congressmen_pic_by_id(congressman.id, congressman.images[0])#congressmen_pic(congressman.name.gsub(",",""), congressman.images[0])
           = image_tag('congressman/'+fantasy_name+'.jpg', class: "img-circle img-responsive hidden-xs")
           = image_tag('congressman/'+fantasy_name+'.jpg', class: "img-thumbnail img-responsive visible-xs")
       - else

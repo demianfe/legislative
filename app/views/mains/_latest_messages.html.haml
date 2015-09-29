@@ -8,11 +8,15 @@
         %div.home-answers
           %div.col-md-2
             - congressman = congressmen_profile(answer.person.name)
-            - puts congressman
-            - if !congressman['image'].blank?
-              - fantasy_name = congressmen_pic(answer.person.name, congressman['image'])
-              = image_tag('app/assets/images/congressman/'+fantasy_name+'.jpg', class: "img-circle img-responsive hidden-xs")
-              = image_tag('app/assets/images/congressman/'+fantasy_name+'.jpg', class: "img-thumbnail img-responsive visible-xs")
+            -#if !congressman['image'].blank?
+            - puts '#####'
+            - puts answer.person.id
+            - puts '#####'
+            - if !File.exist?('app/assets/images/congressman/'+answer.person.id+'.jpg')  
+              -# fantasy_name = congressmen_pic(answer.person.name, congressman['image'])
+              - id = congressmen_pic_by_id(answer.person.id, congressman['image'])
+              = image_tag('app/assets/images/congressman/'+answer.person.id+'.jpg', class: "img-circle img-responsive hidden-xs")
+              = image_tag('app/assets/images/congressman/'+answer.person.id+'.jpg', class: "img-thumbnail img-responsive visible-xs")
             - else
               = image_tag('default-profile.png', class: "img-circle img-responsive hidden-xs")
               = image_tag('default-profile.png', class: "img-thumbnail img-responsive visible-xs")
