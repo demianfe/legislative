@@ -7,7 +7,7 @@ module MainsHelper
       result = response['result']
     end
     if result.size > 1
-      #result = response['result'][0]      
+      result = response['result'][0]      
     #if !response.nil?
       return {'id' => result['id'], 'name' => result['name'], 'image' => result['image']}
     else
@@ -40,12 +40,12 @@ module MainsHelper
 
   def congressmen_pic_by_id(id, img)
     url_image = open('app/assets/images/default-profile.png')
-    if !File.exist?('app/assets/images/congressman/'+id+'.jpg')
+    if !File.exist?('app/assets/images/congressman/'+id.to_s+'.jpg')
       image = Magick::ImageList.new
       begin
         Timeout.timeout(5) do
           #puts "Imagen: " << img
-          url_image = open('app/assets/images/congressman/'+id+'.jpg')
+          url_image = open('app/assets/images/congressman/'+id.to_s+'.jpg')
         end
       rescue Timeout::Error
         url_image = open('app/assets/images/default-profile.png')
