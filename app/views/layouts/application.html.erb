@@ -12,13 +12,13 @@
     <title><%= @title %><%= Legislative::Application.config.application_name %></title>
     <meta name="description" content="<%= ENV['description'] %>">
     <meta name="keywords" content="<%= ENV['keywords'] %>">
-
-    <meta name="og:image" content="<%= asset_path('assets/congreso-abierto-og-fb-404.png') %>">
+    <!-- congreso-abierto-og-fb-404 -->
+    <meta name="og:image" content="<%= asset_path('assets/logo-parlamentoabierto.png') %>">
     <meta name="og:title" content="<%= @title %><%= Legislative::Application.config.application_name %>">
     <meta name="og:description" content="<%= ENV['og_description'] %>">
 
-    <meta name="google-site-verification" content="<%= ENV['google_site_verification'] %>" />
-    <link type="text/plain" rel="author" href="<%= ENV['root_url'] %>/humans.txt" />
+    <!--meta name="google-site-verification" content="<%= ENV['google_site_verification'] %>" />
+    <link type="text/plain" rel="author" href="<%= ENV['root_url'] %>/humans.txt" /-->
     <!-- Mobile viewport optimized: h5bp.com/viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -149,23 +149,19 @@
       <div class="row">
         <div class="col-md-4">
             <ul>
-                <li><a href="https://github.com/TEDICpy" target="_blank"><i class="fa fa-github-alt"></i> Revisa nuestro código en Github</a></li>
+                <li><a href="https://github.com/TEDICpy/legislative" target="_blank"><i class="fa fa-github-alt"></i> Revisa nuestro código en Github</a></li>
+		<li>En conjunto con <a href="//www.ciudadanointeligente.org/" target="_blank"></i>Ciudadano Inteligente</li>
 
             </ul>
         </div>
         <div class="col-md-4">
           <ul>
-            <li>
-		Un trabajo en conjunto con <a href="//www.ciudadanointeligente.org/" target="_blank"><!--i class="fa fa-heart-o"--></i>Ciudadano Inteligente
-            </li>
+                <li><img alt="Licencia Creative Commons" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"></li>
           </ul>
         </div>
         <div class="col-md-4">
             <ul>
-               <li>
-              	Es una iniciativa de    <a href="//www.tedic.org/" target="_blank"><img src="<%= asset_path('assets/TEDIC-logo-blanco.png') %>" alt="TEDIC" title="TEDIC"></a>
-                  <!--img src="<%= asset_path('assets/logo-ciudadanoi.png') %>" alt="Fundación Ciudadano Inteligente" title="Fundación Ciudadano Inteligente"--></a>
-		</li>
+               <li>Es una iniciativa de   <a href="//www.tedic.org/" target="_blank"><img src="<%= asset_path('assets/TEDIC-logo-blanco.png') %>" alt="TEDIC" title="TEDIC, Tecnolgía y Comunidad"></a> </a></li>
             </ul>
         </div>
       </div>

@@ -9,7 +9,7 @@ Monologue.config do |config|
   config.admin_force_ssl = false
   config.posts_per_page = 10
 
-  config.disqus_shortname = "congresoabierto"
+  config.disqus_shortname = "parlamentoabierto"
 
   # LOCALE
   config.twitter_locale = "es" # "fr"
@@ -27,7 +27,7 @@ Monologue.config do |config|
 
   #SOCIAL
   config.twitter_username = "ciudadanoi"
-  config.facebook_url = "https://www.facebook.com/ciudadanointeligente"
+  config.facebook_url = "https://www.facebook.com/tedicpy1"
   config.facebook_logo = 'logo.png'
   config.google_plus_account_url = "https://plus.google.com/107619558104056675526/posts"
   #config.linkedin_url = "http://www.linkedin.com/in/jipiboily"
