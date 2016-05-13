@@ -1,3 +1,6 @@
+:javascript
+  https://gs-share.tedic.org/js/gs-share.js
+
 %div.socialnetwork-home
   %ul.social-network.list-inline
     - if !ENV['twitter_account'].blank? and !ENV['twitter_tags'].blank?
@@ -15,4 +18,8 @@
           %i.fa.fa-facebook.fa-stack-1x.fa-inverse
     %li
       %a{:href => "javascript:;", :onclick => "window.open('http://sharetodiaspora.github.io/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title),'das','location=no,links=no,scrollbars=no,toolbar=no,width=620,height=550'); return false;", :rel => "nofollow", :target => "_blank"}
-        %img{:src => "http://sharetodiaspora.github.io/favicon.png", :style => "border: 0px solid;"}
+        //%img{:src => "http://sharetodiaspora.github.io/favicon.png", :width => "30", :height => "30", :style => "border: 0px solid;"}
+        %img{:src => "http://parlamentoabierto.org.py/assets/Diaspora-asterisk.svg", :width => "30", :height => "30",:style => "border: 0px solid;"}
+    %li
+      %div{:class=> "gs-share"}
+        %button.js-gs-share.gs-share--icon{"data-title" => "TITLE-from-data", "data-url" => "URL-from-data"}

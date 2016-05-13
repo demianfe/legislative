@@ -24,17 +24,19 @@ class MainsController < ApplicationController
     @hot_bills = {};
     
     if !ENV['billit_url'].blank?
-      #priorities are all the same for us, just get this year's bills
-      time = Time.new
-      @hot_bills = prioritize Billit::BillPage.get(ENV['billit_url'] + URI::escape("search?creation_date_min="+time.year.to_s+"-01-01"), 'application/json').bills
+      #priorities are all the same for us
+      #get last 5 months bills 60*60*24*30*5 = seconds*minutes*hours*days*months
+      five_months_in_sec = 60*60*24*30*7
+      time = Time.new - five_months_in_sec
+      search_date = time.strftime("%Y-%m-%d")
+      @hot_bills = prioritize Billit::BillPage.get(ENV['billit_url'] + URI::escape("search?creation_date_min="+search_date), 'application/json').bills
     end
     
     if (!ENV['writeit_base_url'].blank?)
-	    @answers = LegislativeAnswerCollection.get()
-
-	    if @answers.objects.length > 2
-	      @answers.objects = @answers.objects[0..1]
-	    end
+      @answers = LegislativeAnswerCollection.get()
+      if @answers.objects.length > 2
+        @answers.objects = @answers.objects[2..1]
+      end
     end
   end
 

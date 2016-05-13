@@ -23,7 +23,7 @@
             = t("congressmen.fb_share")
         - if !ENV['twitter_tags'].blank?
           %li
-            - url = '//twitter.com/share?url='+request.original_url+'&via='+ENV['twitter_account']+'&hashtags='+ENV['twitter_tags']+'&text=Revisa el perfil de '+@el_twitter+' en '
+            - url = '//twitter.com/share?url='+request.original_url+'&via='+ENV['twitter_account']+'&hashtags='+ENV['twitter_tags']+'&text=Revisa el perfil de '+@congressman.name+' en '
             %a.btn.btn-warning.btn-xs{'href'=>'#', 'onclick'=>'window.open("'+url+'","twitter","width=450, height=250")'}
               %i.fa.fa-twitter
               = t("congressmen.tw_share")

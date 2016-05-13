@@ -4,6 +4,7 @@
   %div.row
     - @answers.objects.each do |answer|
       - message = LegislativeMessageRepresenter.get(answer.message_id)
+      - #unless !message.nil?
       %div.col-md-6.home-answers-wraper
         %div.home-answers
           %div.col-md-2
@@ -11,7 +12,7 @@
             - puts congressman['id']
             - if !congressman['image'].blank?
               -# fantasy_name = congressmen_pic(answer.person.name, congressman['image'])
-              - id = congressmen_pic_by_id(congressman['id'], congressman['image'])
+                - id = congressmen_pic_by_id(congressman['id'], congressman['image'])
               = image_tag('congressman/'+id+'.jpg', class: "img-circle img-responsive hidden-xs")
               = image_tag('congressman/'+id+'.jpg', class: "img-thumbnail img-responsive visible-xs")
             - else

@@ -16,7 +16,6 @@ class CommunicationsController < ApplicationController
         page = params[:page]
       end
       @messages.get page: page
-
       set_pagination @messages.meta
     end
 

@@ -92,15 +92,17 @@ development:
   billit_url: 'http://billit.parlamentoabierto.org.py:8002/bills/'
   paperworks_url: 'http://billit.parlamentoabierto.org.py:8002/bills/'
   #paperworks_url: 'http://billit.ciudadanointeligente.org/paperworks/'
-  popit_url:  'parlamento.popit.parlamentoabierto.org.py:8000/api/v0.1'  # example: 'legislative-instance.popit.mysociety.org'; you will need create a instance, please contact with mysociety's popit team in popit@mysociety.org. http://popit.mysociety.org/instances/new
+  popit_url:  'http://parlamento.popit.parlamentoabierto.org.py:8000/api/v0.1'  # example: 'legislative-instance.popit.mysociety.org'; you will need create a instance, please contact with mysociety's popit team in popit@mysociety.org. http://popit.mysociety.org/instances/new
   popit_persons:  'http://parlamento.popit.parlamentoabierto.org.py:8000/api/v0.1/persons/'  # example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/persons/'; the same instance used above but with http and person path
   popit_search:   'http://parlamento.popit.parlamentoabierto.org.py:8000/api/v0.1/search/persons?'   # example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/search/persons?'; used for person search
   popit_organizations: 'http://parlamento.popit.parlamentoabierto.org.py:8000/api/v0.1/organizations/'  #example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/organizations/'
   popit_organizations_search: 'http://parlamento.popit.parlamentoabierto.org.py:8000/api/v0.1/search/organizations?' #example: 'http://legislative-instance.popit.mysociety.org/api/v0.1/search/organizations?'
   writeit_base_url: 'http://writeit.ciudadanointeligente.org' # example: 'http://localhost:3001'; you will need create a instance, please contact with ciudadanointeligente's lab team in lab@ciudadanointeligente.org. http://writeit.ciudadanointeligente.org/
+#lupa config
   writeit_url:      '/api/v1/instance/1877/'   # example: '/api/v1/instance/2/'; writeit instance path
   writeit_username: 'lupa18' # example: 'admin'; writeit username
   writeit_api_key:  '5c7dea67d3888a0f7a0c23721d1928f90c5e3043'#'760578b2503e745169dfb7456318eb5408b0a68e'     # example: 'a'; writeit apikey
+#end lupa config
   writeit_messages_per_page: '5'
   google_site_verification: ''
   component_legislative_agendas:   ~ # to enable this component set a not null value, example: 'true' or '1'

@@ -901,7 +901,8 @@ h4 span.nostyle {
   }
   .arregloFotter {
     height: 110px;
-    background-color: #56B9AA;
+    background-color: #ffffff;
+    /*background-color: #56B9AA;*/
   }
 }
 

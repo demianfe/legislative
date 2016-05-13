@@ -150,6 +150,9 @@ class CongressmenController < ApplicationController
     organizations = Popit::OrganizationCollection.new
     organizations.get ENV['popit_organizations'], 'application/json'
     organizations = organizations.result.sort! { |x,y| x.name <=> y.name }
+    puts '######################################################################'
+    puts  ENV['popit_organizations']
+    puts '######################################################################'
     return organizations
   end
 
@@ -159,6 +162,9 @@ class CongressmenController < ApplicationController
     organizations.get ENV['popit_organizations_search'] + 'q=classification:party',
                       'application/json'
     organizations = organizations.result.sort! { |x,y| x.name <=> y.name }
+    puts '######################################################################'
+    puts ENV['popit_organizations_search'] + 'q=classification:party'
+    puts '######################################################################'
     return organizations
   end
 
